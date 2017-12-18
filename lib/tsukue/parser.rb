@@ -93,7 +93,7 @@ module Tsukue
 
     def self.extract_rows(columns)
       col_size = columns.size
-      row_size = columns.children.size
+      row_size = columns.first.children.size
 
       rows = []
       (0..(row_size - 1)).each do |row_index|
