@@ -7,6 +7,7 @@ module Tsukue
     def self.extract_table(doc, xpath)
       rows = []
       table = doc.xpath(xpath)
+      table = table.first if table.is_a?(Array)
       rows = table.xpath("./thead/tr|./tr|./tbody/tr").collect do |row|
         row.xpath("./td|./th").collect do |col|
           col
